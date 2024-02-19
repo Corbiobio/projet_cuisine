@@ -1,0 +1,10 @@
+{
+    "name": "corbio/cuisine",
+    "description": "cuisine",
+    "autoload": {
+        "psr-4": {
+            "Cuisine\\": "src/"
+        }
+    },
+    "require": {}
+}

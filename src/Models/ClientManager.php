@@ -19,10 +19,25 @@ class ClientManager
 
     function get_all()
     {
-        $sql = "SELECT * FROM Client";
+        $sql = "SELECT * FROM client";
 
         $result = $this->bdd->query($sql);
 
         return $result;
+    }
+
+    function get_client($password, $mail)
+    {
+        $sql = "SELECT * FROM client where mail_client = ? and password_client = ?";
+        $result = $this->bdd->prepare($sql);
+        $result->execute(
+            array(
+                $mail,
+                $password
+            )
+        );
+        $result->setFetchMode(PDO::FETCH_CLASS, "cuisine\Models\Client");
+
+        return $result->fetch();
     }
 }

@@ -8,10 +8,12 @@ require SRC . 'helper.php';
 
 $router = new Cuisine\Router($_SERVER["REQUEST_URI"]);
 
-//home get
-$router->get('/', "ClientController@showPage");
+// $router->get('/', require VIEWS . "./page/home.php");
 
 
-
+//login get
+$router->get('/login', "ClientController@showLogin");
+//login post
+$router->post('/login', "ClientController@login");
 
 $router->run();

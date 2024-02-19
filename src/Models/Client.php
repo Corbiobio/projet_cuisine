@@ -4,16 +4,35 @@ namespace Cuisine\Models;
 
 class Client
 {
-    private string $xx;
+    private string $id_client;
+    private string $mail_client;
+    private string $password_client;
 
-    public function setXx($xx): void
+    public function setId_client($id_client): void
     {
-        $this->xx = $xx;
+        $this->id_client = $id_client;
     }
 
-    public function getXx(): string
+    public function getId_client(): string
     {
-        return $this->xx;
+        return $this->id_client;
+    }
+    public function setMail_client($mail_client): void
+    {
+        $this->mail_client = $mail_client;
+    }
+
+    public function getMail_client(): string
+    {
+        return $this->mail_client;
+    }
+    public function setPassword_client($password_client): void
+    {
+        $this->password_client = $password_client;
+    }
+
+    public function getPassword_client(): string
+    {
+        return $this->password_client;
     }
 }
-?>

@@ -18,10 +18,26 @@ class ClientController
     }
 
     //methode
-    function showPage()
+    function showLogin()
     {
-        $Xxs = $this->ClientManager->get_all();
-        require VIEWS . "./page/home.php";
+        require VIEWS . "./page/login.php";
+    }
+    function login()
+    {
+        //crypt password and mail
+        $password = htmlspecialchars($_POST["password"]);
+        $mail = htmlspecialchars($_POST["mail"]);
+
+        //get client
+        $client = $this->ClientManager->get_client($password, $mail);
+
+        //set client info in session
+        if ($client) {
+            $_SESSION["id"] = $client->getId_client();
+            $_SESSION["mail"] = $client->getMail_client();
+        }
+
+        require VIEWS . "./page/login.php";
     }
 }
 

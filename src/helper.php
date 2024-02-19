@@ -36,3 +36,14 @@ function slugify($str)
     }
     return $str;
 }
+
+//if login
+function is_login()
+{
+    //if connect true
+    if (isset($_SESSION["id"]) && $_SESSION) {
+        return true;
+    } else {
+        return false;
+    }
+}

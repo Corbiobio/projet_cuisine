@@ -41,7 +41,7 @@ function slugify($str)
 function is_login()
 {
     //if connect true
-    if (isset($_SESSION["id"]) && $_SESSION) {
+    if (isset($_SESSION["id"]) && $_SESSION["id"]) {
         return true;
     } else {
         return false;

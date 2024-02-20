@@ -39,6 +39,14 @@ class ClientController
 
         require VIEWS . "./page/login.php";
     }
+
+    function logout()
+    {
+        $_SESSION["id"] = false;
+        $_SESSION["mail"] = false;
+
+        header("location: /login");
+    }
 }
 
 

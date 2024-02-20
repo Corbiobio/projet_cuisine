@@ -5,7 +5,7 @@ ob_start();
 
 <section>
     <h1>Erreur 404</h1>
-    <a href="/home">go to home</a>
+    <a href="/">go to home</a>
 </section>
 
 <?php

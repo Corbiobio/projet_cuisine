@@ -16,11 +16,15 @@ ob_start();
         <h1>login</h1>
 
         <form action="#" method="post">
-            <label for="mail">mail : </label>
-            <input required type="text" id="mail" name="mail">
+            <div>
+                <label for="mail">mail : </label>
+                <input required type="text" id="mail" name="mail">
+            </div>
 
-            <label for="password">password : </label>
-            <input required type="password" id="password" name="password">
+            <div>
+                <label for="password">password : </label>
+                <input required type="password" id="password" name="password">
+            </div>
 
             <input type="submit">
         </form>

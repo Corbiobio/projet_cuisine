@@ -1,0 +1,76 @@
+$black: #010409;
+$blue: #0d1117;
+$grey: #21262d;
+$light_grey: #79818b;
+$light_blue: #2f81f7;
+$border_grey: 1px solid $light_grey;
+$radius_value: 8px;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $black;
+    padding: 0 20%;
+}
+
+p,
+h1,
+h2,
+h3,
+a,
+label {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    margin-bottom: 32px;
+}
+
+
+form {
+    margin-bottom: 32px;
+    padding-bottom: 8px;
+    border-bottom: $border_grey;
+
+    div {
+        margin-bottom: 8px;
+    }
+}
+
+input {
+    background-color: $black;
+    border: $border_grey;
+    border-radius: $radius_value;
+    color: white;
+    padding: 8px;
+    font-size: 16px;
+}
+
+input:focus {
+    outline: none;
+    border-color: $light_blue;
+}
+
+input[type="submit"] {
+    cursor: pointer;
+}
+
+nav {
+    background-color: $blue;
+    padding: 16px 32px;
+    margin: 24px 0;
+    border-radius: $radius_value;
+    border: $border_grey;
+}
+
+main {
+    padding: 32px;
+    border: $border_grey;
+    border-radius: $radius_value;
+    background-color: $blue;
+}

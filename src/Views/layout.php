@@ -11,6 +11,21 @@
 </head>
 
 <body>
+    <header>
+        <!-- nav bar -->
+        <nav>
+            <?php
+            if (is_login()) {
+                echo ("
+                <a href=/>home</a>
+                <a href=logout>logout</a>
+                ");
+            } else {
+                echo ("<a href=login>login</a>");
+            }
+            ?>
+        </nav>
+    </header>
     <main>
         <!-- content from view -->
         <?= $content; ?>

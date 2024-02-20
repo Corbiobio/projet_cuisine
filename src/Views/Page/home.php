@@ -44,7 +44,7 @@ ob_start();
             </div>
             <div>
                 <label for="origins">Origine des plats : </label>
-                <input required list="origins_list" name="origins" id="origins">
+                <input required list="origins_list" name="origin" id="origins">
                 <datalist id="origins_list">
                     <?php
                     foreach ($origins as $origin) {

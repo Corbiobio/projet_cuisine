@@ -8,35 +8,56 @@ ob_start();
     foreach ($meals as $meal) {
         ?>
 
-        <article>
-            <h2>
-                <?= $meal->getTitle_meal() ?>
-            </h2>
-            <p>
-                <?= $meal->getLabel_origin() ?>
-            </p>
-            <p>
-                <?= $meal->getLabel_diet() ?>
-            </p>
-            <p>
-                <?= $meal->getPrice_meal() ?>
-            </p>
-            <p>
-                <?= $meal->getWeight_meal() ?>
-            </p>
-            <p>
-                <?= $meal->getLabel_category() ?>
-            </p>
+        <form action="/cart" method="post">
             <div>
-                <?php
-                $ingredients = $meal->getIngredients();
-                foreach ($ingredients as $ingredient) {
-                    $ingredient = $ingredient["label_ingredient"];
-                    echo ("<p>$ingredient</p>");
-                }
-                ?>
+                <h2>
+                    <?= $meal->getTitle_meal() ?>
+                    <span>
+                        <?= $meal->getLabel_diet() ?> &
+                        <?= $meal->getLabel_category() ?>
+                    </span>
+                </h2>
             </div>
-        </article>
+            <div>
+                <p>
+                    Origine :
+                    <?= $meal->getLabel_origin() ?>
+                </p>
+            </div>
+            <div>
+                <p>Ingredient :</p>
+                <ul>
+                    <?php
+                    $ingredients = $meal->getIngredients();
+                    foreach ($ingredients as $ingredient) {
+                        $ingredient = $ingredient["label_ingredient"];
+                        echo ("<li>$ingredient</li>");
+                    }
+                    ?>
+                </ul>
+            </div>
+            <div>
+                <p>
+                    Poids :
+                    <?= $meal->getWeight_meal() ?>
+                    grammes
+                </p>
+            </div>
+            <div>
+                <p>
+                    Prix :
+                    <?= $meal->getPrice_meal() ?>
+                    €
+                </p>
+            </div>
+            <div>
+                <label for="amount">Quantité : </label>
+                <input type="number" value=1 min=0 id="amount" name="amount">
+            </div>
+
+            <input type="hidden" name="id_meal" value="<?= $meal->getId_meal() ?>">
+            <input type="submit">
+        </form>
         <?php
     }
     ?>

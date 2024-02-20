@@ -47,4 +47,14 @@ class MealController
         $meals = $this->MealManager->get_all_where_ingredient($_POST["ingredients"]);
         require VIEWS . "page/meal_list.php";
     }
+    function sort_title()
+    {
+        $meals = $this->MealManager->get_all_where_title($_POST["title"]);
+        require VIEWS . "page/meal_list.php";
+    }
+    function sort_origin()
+    {
+        $meals = $this->MealManager->get_all_where_origin_and_min_max_price($_POST["origin"], $_POST["min_price"], $_POST["max_price"]);
+        require VIEWS . "page/meal_list.php";
+    }
 }

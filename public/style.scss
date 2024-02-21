@@ -47,7 +47,8 @@ form {
     }
 }
 
-input {
+input,
+button {
     background-color: $black;
     border: $border_grey;
     border-radius: $radius_value;
@@ -61,7 +62,8 @@ input:focus {
     border-color: $light_blue;
 }
 
-input[type="submit"] {
+input[type="submit"],
+button {
     cursor: pointer;
 }
 
@@ -83,6 +85,24 @@ main {
 
         ul {
             margin-left: 32px;
+        }
+    }
+
+
+    .cart {
+        form {
+            border: none;
+            margin: 0;
+        }
+
+        .cart_item {
+            margin-bottom: 32px;
+            padding-bottom: 8px;
+            border-bottom: $border_grey;
+
+            div {
+                margin-bottom: 16px;
+            }
         }
     }
 }

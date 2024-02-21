@@ -38,7 +38,8 @@ form div {
   margin-bottom: 16px;
 }
 
-input {
+input,
+button {
   background-color: #010409;
   border: 1px solid #79818b;
   border-radius: 8px;
@@ -52,7 +53,8 @@ input:focus {
   border-color: #2f81f7;
 }
 
-input[type=submit] {
+input[type=submit],
+button {
   cursor: pointer;
 }
 
@@ -72,4 +74,16 @@ main {
 }
 main .meal_list ul {
   margin-left: 32px;
+}
+main .cart form {
+  border: none;
+  margin: 0;
+}
+main .cart .cart_item {
+  margin-bottom: 32px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #79818b;
+}
+main .cart .cart_item div {
+  margin-bottom: 16px;
 }/*# sourceMappingURL=style.css.map */

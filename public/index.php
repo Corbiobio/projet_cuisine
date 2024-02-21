@@ -16,6 +16,13 @@ $router->post('/meals/sort_ingredient', "MealController@sort_ingredient");
 $router->post('/meals/sort_title', "MealController@sort_title");
 $router->post('/meals/sort_origin', "MealController@sort_origin");
 
+//cart page
+$router->get('/cart', "CartController@index");
+$router->post('/cart', "CartController@store");
+//update amount page
+$router->post('/cart/update', "CartController@update_amount");
+$router->get('/cart/valid_cart', "CartController@delete_cart");
+
 //login and logout page
 $router->get('/login', "ClientController@showLogin");
 $router->post('/login', "ClientController@login");

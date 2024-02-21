@@ -19,6 +19,7 @@ class Meal
     private string $id_category;
     private string $label_category;
     private array $ingredients = [];
+    private float $amount_meal;
 
     public function setId_meal($id_meal): void
     {
@@ -128,5 +129,14 @@ class Meal
     public function getPrice_meal(): float
     {
         return $this->price_meal;
+    }
+    public function setAmount_meal($amount_meal): void
+    {
+        $this->amount_meal = $amount_meal;
+    }
+
+    public function getAmount_meal(): float
+    {
+        return $this->amount_meal;
     }
 }

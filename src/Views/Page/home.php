@@ -26,8 +26,8 @@ ob_start();
 
         <form action="meals/sort_title" method="post">
             <div>
-                <label for="word">Liste des plats via leurs titre : </label>
-                <input required type="text" name="word" id="word">
+                <label for="title">Liste des plats via leurs titre : </label>
+                <input required type="text" name="title" id="title">
             </div>
 
             <input type="submit">

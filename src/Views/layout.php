@@ -17,6 +17,7 @@
             <?php
             if (is_login()) {
                 echo ("
+                <a href=/cart>panier</a>
                 <a href=/>home</a>
                 <a href=logout>logout</a>
                 ");

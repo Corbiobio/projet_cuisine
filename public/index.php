@@ -31,4 +31,16 @@ $router->get('/login', "ClientController@showLogin");
 $router->post('/login', "ClientController@login");
 $router->get('/logout', "ClientController@logout");
 
+//admin page
+$router->get('/admin', "AdminController@index");
+//origins
+$router->get('/admin/origins', "AdminController@index_origins");
+$router->post('/admin/origins', "AdminController@manage_origins");
+//ingredients
+$router->get('/admin/ingredients', "AdminController@index_ingredients");
+$router->post('/admin/ingredients', "AdminController@manage_ingredients");
+//diets
+$router->get('/admin/diets', "AdminController@index_diets");
+$router->post('/admin/diets', "AdminController@manage_diets");
+
 $router->run();

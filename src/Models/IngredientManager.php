@@ -32,4 +32,48 @@ class IngredientManager
         );
         return $result->fetchAll();
     }
+    function get_one($id)
+    {
+        $sql = "SELECT * FROM ingredient where id_ingredient = ?";
+        $result = $this->bdd->prepare($sql);
+        $result->execute(
+            array(
+                $id
+            )
+        );
+        return $result->fetch();
+    }
+
+    function create(string $label): void
+    {
+        $sql = "INSERT INTO ingredient (id_ingredient, label_ingredient) VALUES (?, ?);";
+        $result = $this->bdd->prepare($sql);
+        $result->execute(
+            array(
+                uniqid(),
+                htmlspecialchars($label)
+            )
+        );
+    }
+    function delete(string $id_ingredient): void
+    {
+        $sql = "DELETE FROM ingredient WHERE id_ingredient = ?";
+        $result = $this->bdd->prepare($sql);
+        $result->execute(
+            array(
+                $id_ingredient
+            )
+        );
+    }
+    function update(string $label_ingredient, string $id_ingredient): void
+    {
+        $sql = "UPDATE ingredient SET label_ingredient = ? WHERE id_ingredient = ?";
+        $result = $this->bdd->prepare($sql);
+        $result->execute(
+            array(
+                $label_ingredient,
+                $id_ingredient
+            )
+        );
+    }
 }

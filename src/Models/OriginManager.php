@@ -32,4 +32,39 @@ class OriginManager
         );
         return $result->fetch();
     }
+
+    function create(string $label): void
+    {
+        $sql = "INSERT INTO origin (id_origin, label_origin) VALUES (?, ?);";
+        $result = $this->bdd->prepare($sql);
+        $result->execute(
+            array(
+                uniqid(),
+                htmlspecialchars($label)
+            )
+        );
+    }
+    function delete(string $id_origin): void
+    {
+        $sql = "DELETE FROM origin WHERE id_origin = ?";
+        $result = $this->bdd->prepare($sql);
+        $result->execute(
+            array(
+                $id_origin
+            )
+        );
+    }
+    function update(string $label_origin, string $id_origin): void
+    {
+        $sql = "UPDATE origin SET label_origin = ? WHERE id_origin = ?";
+        $result = $this->bdd->prepare($sql);
+        $result->execute(
+            array(
+                $label_origin,
+                $id_origin
+            )
+        );
+    }
+
+
 }

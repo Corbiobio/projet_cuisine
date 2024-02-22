@@ -35,6 +35,7 @@ class ClientController
         if ($client) {
             $_SESSION["id"] = $client->getId_client();
             $_SESSION["mail"] = $client->getMail_client();
+            $_SESSION["is_admin"] = $client->getIs_admin();
         }
 
         require VIEWS . "./page/login.php";
@@ -44,6 +45,7 @@ class ClientController
     {
         $_SESSION["id"] = false;
         $_SESSION["mail"] = false;
+        $_SESSION["is_admin"] = false;
 
         header("location: /login");
     }

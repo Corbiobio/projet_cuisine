@@ -16,14 +16,18 @@
         <nav>
             <?php
             if (is_login()) {
-                echo ("
-                <a href=/>Home</a>
-                <a href=cart>Panier</a>
-                <a href=meals>Tout les plats</a>
-                <a href=logout>Logout</a>
-                ");
+                ?>
+
+                <a href="/">Home</a>
+                <a href="/cart">Panier</a>
+                <a href="/meals">Tout les plats</a>
+                <a href="/logout">Logout</a>
+                <?php
+                if (is_admin()) {
+                    echo ("<a href=/admin>Admin panel</a>");
+                }
             } else {
-                echo ("<a href=login>Login</a>");
+                echo ("<a href=/login>Login</a>");
             }
             ?>
         </nav>

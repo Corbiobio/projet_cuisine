@@ -47,3 +47,12 @@ function is_login()
         return false;
     }
 }
+function is_admin()
+{
+    //if connect true
+    if (isset($_SESSION["is_admin"]) && $_SESSION["is_admin"] == 1) {
+        return true;
+    } else {
+        return false;
+    }
+}

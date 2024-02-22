@@ -11,6 +11,7 @@ ob_start();
             ?>
 
             <div class="cart_item">
+                <a class="delete_btn" href="cart/delete/<?= $meal->getId_meal() ?>">Delete</a>
                 <div>
                     <h2>
                         <?= $meal->getTitle_meal() ?>
@@ -20,7 +21,7 @@ ob_start();
                 <div>
                     <label for="amount_<?= $meal->getId_meal() ?>">Quantité : </label>
                     <!-- put id meal in key in amount  -->
-                    <input min="0" type="number" id="amount_<?= $meal->getId_meal() ?>"
+                    <input min="1" type="number" id="amount_<?= $meal->getId_meal() ?>"
                         name="amount[<?= $meal->getId_meal() ?>]" value="<?= $meal->getAmount_meal() ?>">
                 </div>
                 <div>
@@ -39,11 +40,21 @@ ob_start();
 
             <?php
         }
+        if ($meals) {
+            //put button if meals
+            echo ('<input type="submit" value="Actualiser">');
+        }
         ?>
-        <input type="submit" value="Actualiser">
     </form>
 
-    <button><a href="/cart/valid_cart">Valider le panier</a></button>
+    <?php
+    if ($meals) {
+        //put button if meals
+        echo ('<button><a href="/cart/valid_cart">Valider le panier</a></button>');
+    } else {
+        echo ("<p>Votre panier est vide !</p>");
+    }
+    ?>
 </section>
 
 <?php

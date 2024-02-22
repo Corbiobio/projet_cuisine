@@ -17,12 +17,13 @@
             <?php
             if (is_login()) {
                 echo ("
-                <a href=/cart>panier</a>
-                <a href=/>home</a>
-                <a href=logout>logout</a>
+                <a href=/>Home</a>
+                <a href=cart>Panier</a>
+                <a href=meals>Tout les plats</a>
+                <a href=logout>Logout</a>
                 ");
             } else {
-                echo ("<a href=login>login</a>");
+                echo ("<a href=login>Login</a>");
             }
             ?>
         </nav>

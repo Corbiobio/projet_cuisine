@@ -33,7 +33,16 @@ class CartController
             header("location: login");
         }
 
-        $this->CartManager->store($_POST["id_meal"], $_SESSION["id"], $_POST["amount"]);
+        $meal = $this->CartManager->get_one_cart($_SESSION["id"], $_POST["id_meal"]);
+
+        if ($meal) {
+            $old_quantity = $meal["amount_meal"];
+            $new_quantity = $old_quantity + $_POST["amount"];
+
+            $this->CartManager->update_amount_meal_user_id($_POST["id_meal"], $_SESSION["id"], $new_quantity);
+        } else {
+            $this->CartManager->store($_POST["id_meal"], $_SESSION["id"], $_POST["amount"]);
+        }
         header("location: /cart");
     }
 
@@ -58,6 +67,18 @@ class CartController
         }
 
         $this->CartManager->delete_user_cart($_SESSION["id"]);
+        header("location: /cart");
+    }
+
+    //slug = id_meal
+    function delete_one_meal($slug): void
+    {
+        if (!is_login()) {
+            //redirect if not login
+            header("location: login");
+        }
+
+        $this->CartManager->delete_meal_user($_SESSION["id"], $slug);
         header("location: /cart");
     }
 }

@@ -83,7 +83,12 @@ main .cart .cart_item {
   margin-bottom: 32px;
   padding-bottom: 8px;
   border-bottom: 1px solid #79818b;
+  position: relative;
 }
 main .cart .cart_item div {
   margin-bottom: 16px;
+}
+main .cart .cart_item .delete_btn {
+  position: absolute;
+  right: 0;
 }/*# sourceMappingURL=style.css.map */

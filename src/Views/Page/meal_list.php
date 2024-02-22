@@ -56,7 +56,7 @@ ob_start();
             </div>
 
             <input type="hidden" name="id_meal" value="<?= $meal->getId_meal() ?>">
-            <input type="submit">
+            <input type="submit" value="Ajouter">
         </form>
         <?php
     }

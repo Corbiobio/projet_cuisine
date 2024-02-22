@@ -35,6 +35,16 @@ class MealController
         require VIEWS . "page/home.php";
     }
 
+    function show_all_meals()
+    {
+        if (!is_login()) {
+            //redirect if not login
+            header("location: login");
+        }
+
+        $meals = $this->MealManager->get_all();
+        require VIEWS . "page/meal_list.php";
+    }
     function sort_ingredient()
     {
         if (!is_login()) {

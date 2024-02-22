@@ -28,6 +28,19 @@ class CartManager
 
         return $result->fetchAll(PDO::FETCH_CLASS, "cuisine\Models\Meal");
     }
+    function get_one_cart(string $user_id, string $meal_id): array|bool
+    {
+        $sql = "SELECT * FROM cart WHERE id_client = ? AND id_meal = ?;";
+        $result = $this->bdd->prepare($sql);
+        $result->execute(
+            array(
+                $user_id,
+                $meal_id
+            )
+        );
+
+        return $result->fetch();
+    }
 
     function store($id_meal, $user_id, $amount)
     {
@@ -56,11 +69,23 @@ class CartManager
     }
     function delete_user_cart(string $user_id): void
     {
-        $sql = "DELETE FROM cart WHERE cart.id_client = ?";
+        $sql = "DELETE FROM cart WHERE id_client = ?";
         $result = $this->bdd->prepare($sql);
         $result->execute(
             array(
                 $user_id
+            )
+        );
+    }
+
+    function delete_meal_user(string $user_id, string $meal_id)
+    {
+        $sql = "DELETE FROM cart WHERE id_client = ? AND id_meal = ?";
+        $result = $this->bdd->prepare($sql);
+        $result->execute(
+            array(
+                $user_id,
+                $meal_id
             )
         );
     }

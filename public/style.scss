@@ -99,9 +99,15 @@ main {
             margin-bottom: 32px;
             padding-bottom: 8px;
             border-bottom: $border_grey;
+            position: relative;
 
             div {
                 margin-bottom: 16px;
+            }
+
+            .delete_btn {
+                position: absolute;
+                right: 0;
             }
         }
     }

@@ -20,8 +20,8 @@ ob_start();
                 <div>
                     <label for="amount_<?= $meal->getId_meal() ?>">Quantité : </label>
                     <!-- put id meal in key in amount  -->
-                    <input type="number" id="amount_<?= $meal->getId_meal() ?>" name="amount[<?= $meal->getId_meal() ?>]"
-                        value="<?= $meal->getAmount_meal() ?>">
+                    <input min="0" type="number" id="amount_<?= $meal->getId_meal() ?>"
+                        name="amount[<?= $meal->getId_meal() ?>]" value="<?= $meal->getAmount_meal() ?>">
                 </div>
                 <div>
                     <p>Prix unité :

@@ -52,7 +52,7 @@ ob_start();
             </div>
             <div>
                 <label for="amount">Quantité : </label>
-                <input type="number" value=1 min=0 id="amount" name="amount">
+                <input type="number" value=1 min=1 id="amount" name="amount">
             </div>
 
             <input type="hidden" name="id_meal" value="<?= $meal->getId_meal() ?>">

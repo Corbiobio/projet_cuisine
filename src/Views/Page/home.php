@@ -9,8 +9,7 @@ ob_start();
         <form action="meals/sort_ingredient" method="post">
             <div>
                 <label for="ingredients">Liste des plats via un ingredient : </label>
-                <input required list="ingredients_list" name="ingredients" id="ingredients">
-                <datalist id="ingredients_list">
+                <select id="ingredients" name="ingredients">
                     <?php
                     foreach ($ingredients as $ingredient) {
                         echo ("
@@ -18,7 +17,7 @@ ob_start();
                     ");
                     }
                     ?>
-                </datalist>
+                </select>
             </div>
 
             <input type="submit">
@@ -44,8 +43,7 @@ ob_start();
             </div>
             <div>
                 <label for="origins">Origine des plats : </label>
-                <input required list="origins_list" name="origin" id="origins">
-                <datalist id="origins_list">
+                <select id="origins" name=origin>
                     <?php
                     foreach ($origins as $origin) {
                         echo ("
@@ -53,7 +51,7 @@ ob_start();
                         ");
                     }
                     ?>
-                </datalist>
+                </select>
             </div>
             <input type="submit">
         </form>

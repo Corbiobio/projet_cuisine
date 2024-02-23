@@ -50,7 +50,8 @@ form {
 }
 
 input,
-button {
+button,
+select {
     background-color: $black;
     border: $border_grey;
     border-radius: $radius_value;

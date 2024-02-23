@@ -9,6 +9,7 @@ ob_start();
         <a href="/admin/ingredients">Ingredients</a>
         <a href="/admin/origins">Origins</a>
         <a href="/admin/diets">Diets</a>
+        <a href="/admin/meals">Meals</a>
     </nav>
 
     <div>

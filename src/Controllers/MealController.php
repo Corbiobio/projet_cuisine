@@ -71,7 +71,7 @@ class MealController
             //redirect if not login
             header("location: login");
         }
-
+        var_dump($_POST);
         $meals = $this->MealManager->get_all_where_origin_and_min_max_price($_POST["origin"], $_POST["min_price"], $_POST["max_price"]);
         require VIEWS . "page/meal_list.php";
     }

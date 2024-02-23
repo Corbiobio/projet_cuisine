@@ -42,5 +42,8 @@ $router->post('/admin/ingredients', "AdminController@manage_ingredients");
 //diets
 $router->get('/admin/diets', "AdminController@index_diets");
 $router->post('/admin/diets', "AdminController@manage_diets");
+//meals
+$router->get('/admin/meals', "AdminController@index_meals");
+$router->post('/admin/meals', "AdminController@manage_meals");
 
 $router->run();

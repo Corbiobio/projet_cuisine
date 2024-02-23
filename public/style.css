@@ -41,7 +41,8 @@ form div {
 }
 
 input,
-button {
+button,
+select {
   background-color: #010409;
   border: 1px solid #79818b;
   border-radius: 8px;

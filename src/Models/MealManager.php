@@ -67,5 +67,48 @@ class MealManager
 
         return $result->fetchAll(PDO::FETCH_CLASS, "cuisine\Models\Meal");
     }
+    function update(string $id_meal, string $id_origin, string $id_diet, string $id_category, string $title, float $price, float $weight): void
+    {
+
+        $sql = "UPDATE `meal` SET id_origin = ? ,id_diet = ? ,id_category = ?,title_meal= ?,price_meal= ?,weight_meal = ? WHERE id_meal = ?";
+        $result = $this->bdd->prepare($sql);
+        $result->execute(
+            array(
+                $id_origin,
+                $id_diet,
+                $id_category,
+                $title,
+                $price,
+                $weight,
+                $id_meal
+            )
+        );
+    }
+    function create(string $id_origin, string $id_diet, string $id_category, string $title, float $price, float $weight): void
+    {
+        $sql = "INSERT INTO meal (id_meal, id_origin, id_diet, id_category, title_meal, price_meal, weight_meal) VALUES (?, ?, ?, ?, ?, ?, ? );";
+        $result = $this->bdd->prepare($sql);
+        $result->execute(
+            array(
+                uniqid(),
+                $id_origin,
+                $id_diet,
+                $id_category,
+                $title,
+                $price,
+                $weight
+            )
+        );
+    }
+    function delete(string $id_meal): void
+    {
+        $sql = "DELETE FROM meal WHERE id_meal = ?";
+        $result = $this->bdd->prepare($sql);
+        $result->execute(
+            array(
+                $id_meal
+            )
+        );
+    }
 
 }

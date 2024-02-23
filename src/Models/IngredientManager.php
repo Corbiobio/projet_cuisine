@@ -55,6 +55,39 @@ class IngredientManager
             )
         );
     }
+    function get_meal_ingr(string $id_ingredient, string $id_meal): array
+    {
+        $sql = "SELECT * FROM ingredient_meal WHERE id_ingredient = ? AND id_meal = ? ;";
+        $result = $this->bdd->prepare($sql);
+        $result->execute(
+            array(
+                $id_ingredient,
+                $id_meal
+            )
+        );
+        return $result->fetch();
+    }
+    function delete_meal_ingr(string $id_meal): void
+    {
+        $sql = "DELETE FROM ingredient_meal WHERE id_meal = ?";
+        $result = $this->bdd->prepare($sql);
+        $result->execute(
+            array(
+                $id_meal
+            )
+        );
+    }
+    function create_meal_ingr(string $id_ingredient, $id_meal): void
+    {
+        $sql = "INSERT INTO ingredient_meal (id_ingredient, id_meal) VALUES (?, ?);";
+        $result = $this->bdd->prepare($sql);
+        $result->execute(
+            array(
+                $id_ingredient,
+                $id_meal
+            )
+        );
+    }
     function delete(string $id_ingredient): void
     {
         $sql = "DELETE FROM ingredient WHERE id_ingredient = ?";

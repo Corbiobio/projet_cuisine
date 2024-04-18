@@ -1,4 +1,8 @@
 # Cuisine
+Projet d'entrainerment -> SASS, PHP, POO, MVC, MCD/MLD 
+## Preview
+
+![preview](https://github.com/Corbiobio/projet_cuisine/blob/main/public/img/preview.png )
 
 ## temps total : 13h30
 
@@ -67,18 +71,7 @@ Cuisine
 - Initialiser le dossier comme étant un projet composer
 
 ```shell
-$ composer init  # crée le fichier composer.json
 $ composer install # install l'autoloader
-```
-
-- Remplir le fichier composer avec la règle d'autoloading
-
-```json
-"autoload": {
-    "psr-4": {
-        "RootName\\": "src/"
-    }
-}
 ```
 
 - Réinitialiser l'autoloader
@@ -87,4 +80,9 @@ $ composer install # install l'autoloader
 $ composer dump-autoload
 ```
 
-//lancer php -S localhost:8000 dans le dossier public
+lancer ces deux commandes puis aller ici -> http://localhost:8000/
+```
+cd public
+php -S localhost:8000
+```
+
